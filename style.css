@@ -10,10 +10,33 @@
 body{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to right, rgb(255, 187, 61), rgb(159, 0, 0));
+    /* background-image: linear-gradient(to right, rgb(0, 0, 190),rgb(0, 0, 101), rgb(94, 0, 94)); */
+     background-image: linear-gradient(to right, rgb(255, 187, 61), rgb(159, 0, 0)); 
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+header{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+header .material-symbols-outlined{
+    font-size: 2em;
+    border-radius: 20px;
+    width: 200px;
+}
+header span #darkmode{
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    font-size: .6em;
+    display: none;
+    
 }
 main{
     width: 50vw;
@@ -21,13 +44,15 @@ main{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(to right, rgb(255, 166, 0), rgb(255, 0, 0));
+    /* background-image: linear-gradient(to right, rgb(0, 0, 176),rgb(0, 0, 163), rgb(189, 0, 189)); */
+     background-image: linear-gradient(to right, rgb(255, 166, 0), rgb(255, 0, 0)); 
     border-radius: 15px; 
 }
 main .caixa{
     width: 150px;
-    height: 250px;
-    background-color: rgb(255, 192, 76);
+    height: 230px;
+    /* background-color: darkblue; */
+     background-color: rgb(255, 192, 76); 
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -40,6 +65,17 @@ main .caixa{
 main .caixa span{
     font-size: 5.5em;
 }
+.modo-noturno main{
+    background-image: linear-gradient(to right, rgb(0, 0, 176),rgb(0, 0, 163), rgb(189, 0, 189));
+}
+.modo-noturno {
+    background-image: linear-gradient(to right, rgb(0, 0, 190), rgb(0, 0, 101), rgb(94, 0, 94));
+}
+
+.modo-noturno main .caixa {
+    background-color: darkblue;
+}
+
 @media screen and (max-width: 905px) {
     main{
         border-radius: 0;
@@ -61,6 +97,28 @@ main .caixa span{
         font-size: 5em;
     }
     main .caixa:last-child::after{
+        content: '';
+    }
+    .modo-noturno main{
+        border-radius: 0;
+        background-image: none;
+        margin: auto;
+    }
+    .modo-noturno main .caixa{
+        background-color: transparent;
+        margin-left: 30px;
+    }
+    .modo-noturno main .caixa:first-child{
+        margin-left: 0;
+    }
+    .modo-noturno main .caixa:after{
+        content: ':';
+        position: absolute;
+        top: 50px;
+        left: 100%;
+        font-size: 5em;
+    }
+    .modo-noturno main .caixa:last-child::after{
         content: '';
     }
 }
