@@ -34,8 +34,33 @@ main .caixa{
     text-align: center;
     font-size: 1.2em;
     padding-top: 20px;
+    position: relative;
 }
 
 main .caixa span{
     font-size: 5.5em;
+}
+@media screen and (max-width: 905px) {
+    main{
+        border-radius: 0;
+        background-image: none;
+        margin: auto;
+    }
+    main .caixa{
+        background-color: transparent;
+        margin-left: 30px;
+    }
+    main .caixa:first-child{
+        margin-left: 0;
+    }
+    main .caixa:after{
+        content: ':';
+        position: absolute;
+        top: 50px;
+        left: 100%;
+        font-size: 5em;
+    }
+    main .caixa:last-child::after{
+        content: '';
+    }
 }
